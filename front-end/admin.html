@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{pageTitle}}</h1>
+      <table>
+        <tr>
+          <th>Color Name</th>
+          <th>Hex</th>
+          <th>RGB</th>
+          <th>URL</th>
+          <th>Decision</th>
+        </tr>
+        <tr v-for="suggestion in suggestions">
+          <td>{{suggestion.colorName}}</td>
+          <td>{{suggestion.hexCode}}</td>
+          <td>{{suggestion.rgb}}</td>
+          <td>{{suggestion.url}}</td>
+          <td><button type="submit" @click="addColor(suggestion)">save</button><button type="submit" @click="deleteSuggestion(suggestion.SuggestionsTableId)">delete</button></td>
+        </tr>
+      </table>
+    </div>
+    <script src="admin.js"></script>
+  </body>
+</html>
